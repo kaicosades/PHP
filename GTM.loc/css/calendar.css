@@ -1,0 +1,51 @@
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  max-width: 500px;
+  margin: auto;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  border-radius: 8px;
+  font-weight: 500;
+  background: #f4f4f4;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.day:hover {
+  background: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.weekend {
+  color: #d32f2f;
+  background: #ffe0e0;
+}
+
+.current {
+  border: 2px solid #1976d2;
+  background: #bbdefb;
+  font-weight: bold;
+}
+
+.task-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}

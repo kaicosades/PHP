@@ -1,0 +1,60 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ecf0f1;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+/* Ошибочное сообщение */
+p[style="color: red;"] {
+  text-align: center;
+  font-weight: bold;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+
+a button {
+  display: block; /* Делает кнопку блочным элементом */
+  margin: 0 auto; /* Автоматические боковые отступы для центрирования */
+  width: fit-content; /* Подстраивает ширину под содержимое */
+  width: auto;
+  background: #2ecc71;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+a button:hover {
+  background: #27ae60;
+}

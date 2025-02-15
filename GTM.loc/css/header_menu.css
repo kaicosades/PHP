@@ -1,0 +1,143 @@
+.modal_add_task {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  background: #552462;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+}
+
+.modal_add_task h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.modal_add_task label {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal_add_task input,
+.modal_add_task select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.modal_add_task button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.modal_add_task button:first-of-type {
+  background: #22c10e;
+  color: white;
+}
+
+.modal_add_task button:first-of-type:hover {
+  background: #0a7533;
+}
+
+.modal_add_task button:last-of-type {
+  background: #e74c3c;
+  color: white;
+  margin-top: 5px;
+}
+
+.modal_add_task button:last-of-type:hover {
+  background: #c0392b;
+}
+
+
+
+.modal_close_task {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 1000;
+  width: 300px;
+}
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+.header .left {
+  display: flex;
+  align-items: center;
+}
+.header .center {
+  flex-grow: 1;
+  text-align: center;
+}
+.header .right {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.header button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+.header button:hover {
+  background-color: #0056b3;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  background-color: gray;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.dropdown button {
+  width: 100%;
+  margin-top: 10px;
+  background-color: red;
+}
