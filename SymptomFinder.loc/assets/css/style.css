@@ -1,0 +1,270 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0; /* убираем верх/низ */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px; /* только боковые отступы */
+  padding-right: 40px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#search-block {
+  max-width: 100%;
+  position: relative;
+}
+
+#symptom-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#suggestions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+}
+
+#suggestions div {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+#suggestions div:hover {
+  background-color: #f0f0f0;
+}
+
+#results-block {
+  margin-top: 10px;
+}
+
+.actions {
+  display: flex;
+  align-items: stretch; /* все дети одной высоты */
+  gap: 12px;
+  margin-top: 10px;
+}
+
+#clear-btn {
+  background-color: #2f8f2f;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center; /* текст по центру */
+}
+
+#clear-btn:hover {
+  background-color: #277727;
+}
+
+.actions .disclaimer {
+  margin: 0;
+  font-size: 14px;
+  padding: 4px 4px; /* вертикальные убраны — выравнивается с кнопкой */
+  border-radius: 6px;
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+  display: flex;
+  align-items: center; /* текст по центру по вертикали */
+}
+
+/* таблица */
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* фиксированные колонки */
+  margin-top: 6px;
+}
+
+.results-table th:nth-child(1) {
+  width: 13%;
+} /* Название болезни */
+.results-table th:nth-child(2) {
+  width: 6%;
+} /* Код МКБ-10 */
+.results-table th:nth-child(3) {
+  width: 38%;
+} /* Описание */
+.results-table th:nth-child(4) {
+  width: 13%;
+} /* Симптомы */
+.results-table th:nth-child(5) {
+  width: 24%;
+} /* Диагностика / Лечение */
+.results-table th:nth-child(6) {
+  width: 6%;
+} /* Вероятность */
+
+/* Заголовки таблицы — фиксированные, текст в одну строку */
+.results-table th {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  font-size: 14px;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.results-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  font-size: 14px;
+  vertical-align: top;
+  white-space: normal;
+  display: table-cell;
+  max-height: calc(1.2em * 5);
+  line-height: 1.2em;
+  overflow: hidden;
+}
+
+.results-table td > .cell-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.results-table th {
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
+.results-table tbody tr {
+  background-color: rgba(0, 128, 0, calc(var(--match, 0) * 0.1));
+  transition: background-color 0.3s;
+}
+
+/* шапка */
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 20px; /* 20px сверху/снизу и 20px слева/справа */
+  background-color: #2f8f2f;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo img {
+  display: block;
+  max-height: 50px; /* чтобы лого не растягивалось */
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header-text p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* footer */
+.site-footer {
+  width: 100%;
+  background: #f5f7f6;
+  border-top: 1px solid #e0e0e0;
+  color: #333;
+  padding: 24px 0;
+  box-sizing: border-box;
+  margin-top: auto; /* прижимается вниз */
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1 1 260px;
+  min-width: 220px;
+}
+
+.footer-title {
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.site-footer p {
+  margin: 6px 0;
+  line-height: 1.4;
+  font-size: 14px;
+  color: #444;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 800px;
+  max-height: 80vh;
+  overflow-y: auto; /* прокрутка */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
